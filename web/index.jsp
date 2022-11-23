@@ -32,8 +32,21 @@
                 <a href="/JavaWebAppJDBC/index.jsp" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></a>
             </div>
             <%
+            } else if (resp.equals("Berhasil Hapus Data")) {
+            %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                Berhasil Hapus Data
+                <a href="/JavaWebAppJDBC/index.jsp" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></a>
+            </div>
+            <%
+            } else if (resp.equals("Gagal Tambah Data")) {
+            %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Gagal Tambah Data
+                <a href="/JavaWebAppJDBC/index.jsp" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></a>
+            </div> 
+            <%
                     }
-
                 }
             %>
 
@@ -67,12 +80,12 @@
                                 + "<input type='hidden' name='action' value='edit'/>"
                                 + "<input type='hidden' name='id' value='" + i + "'/>"
                                 + "<input class='btn btn-warning' type='submit' value='Ubah'/></form>");
-                       out.print("</td><td><form action='UserService' method='post'>"
+                        out.print("</td><td><form action='UserService' method='post'>"
                                 + "<input type='hidden' name='id' value='" + i + "'/>"
                                 + "<input type='hidden' name='action' value='delete'/>");
-                                %>
-                                <input onclick="return confirm('apakah anda yakin ingin menghapus <%= n %> ');" class='btn btn-danger' type='submit' value='Hapus'/>
-            <% 
+            %>
+            <input onclick="return confirm('apakah anda yakin ingin menghapus <%= n%> ');" class='btn btn-danger' type='submit' value='Hapus'/>
+            <%
                         out.print("</form></td></tr>");
                     }
                     out.print("</table>");
